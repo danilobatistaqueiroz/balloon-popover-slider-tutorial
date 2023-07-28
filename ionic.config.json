@@ -1,0 +1,7 @@
+{
+  "name": "frames",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
