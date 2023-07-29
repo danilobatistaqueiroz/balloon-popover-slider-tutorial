@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ChatsComponent } from './chats/chats.component';
+import { CallsComponent } from './calls/calls.component';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'calls',
+    component: CallsComponent
+  },
+  {
+    path: 'chats',
+    component: ChatsComponent
   },
   {
     path: '',

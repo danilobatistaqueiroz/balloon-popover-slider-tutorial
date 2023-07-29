@@ -1,0 +1,17 @@
+@-webkit-keyframes slide-to-right{
+  from{left:-100%}
+  to{left:50%}
+}
+@keyframes slide-to-right{
+  from{left:-100%}
+  to{left:50%}
+}
+
+.animate-slide {
+  -webkit-animation: slide-to-right 0.7s linear forwards;
+  animation: slide-to-right 0.7s linear forwards;
+  z-index:10;
+  transform: translateX(-50%);
+  max-width:500px;
+  margin:auto;
+}

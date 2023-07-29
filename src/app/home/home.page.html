@@ -1,20 +1,44 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-balloons></app-balloons>
+<app-presentation></app-presentation>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-tabs id="topTabs">
+  <ion-tab-bar slot="top" style="height:100px;">
+    <ion-grid>
+      <ion-row class="icons ion-justify-content-between" style="padding-top:15px;">
+        <ion-col size="4" style="padding: 15px 0">
+          <ion-title>
+            <ion-label color="medium">Digae</ion-label>
+          </ion-title>
+        </ion-col>
+        <ion-col size="6" style="text-align:right">
+          <ion-button fill="clear" color="medium"><ion-icon name="camera-outline"></ion-icon></ion-button>
+          <ion-button fill="clear" color="medium"><ion-icon name="search-outline"></ion-icon></ion-button>
+          <ion-button id="popover-button" fill="clear" color="medium"><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="tabs">
+        <ion-col style="display:flex;justify-content:space-between;padding-right:10px;" name="col-tabs">
+          <ion-tab-button fill="clear" color="medium" style="padding-bottom:8px;"><ion-icon name="people-sharp"></ion-icon></ion-tab-button>
+          <ion-tab-button id="tabChats" name="tabChats" tab="chats" fill="clear" size="small" color="medium">Conversas<ion-badge slot="end" color="success" style="border-radius:12px;">11</ion-badge></ion-tab-button>
+          <ion-tab-button id="tabStatus" name="tabStatus" tab="status" fill="clear" size="small" color="medium">Status</ion-tab-button>
+          <ion-tab-button id="tabCalls" name="tabCalls" tab="calls" fill="clear" size="small" color="medium">Chamadas</ion-tab-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-tab-bar>
+</ion-tabs>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<!-- ellipsis menu -->
+<ion-popover trigger="popover-button" [dismissOnSelect]="true" side="bottom" alignment="end">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item [button]="true" [detail]="false">Novo grupo</ion-item>
+        <ion-item [button]="true" [detail]="false">Mensagens favoritas</ion-item>
+        <ion-item [button]="true" [detail]="false">Pagamentos</ion-item>
+        <ion-item [button]="true" [detail]="false">Configurações</ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+<!-- ellipsis menu -->

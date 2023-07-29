@@ -1,0 +1,25 @@
+<div id="content">
+  <ul [ngClass]="call.active?'fades':''" [ngClass]="call.unread?'unread':''" style="z-index:-1" *ngFor="let call of calls; let i = index">
+    <li style="height:45px;">
+      <div style="display:flex;flex-direction:row;justify-content:space-between;">
+        <div style="align-self:center">
+          <img src="assets/avatars/{{call.img}}"/>
+        </div>
+        <div style="display:flex;flex-direction:column;flex-grow:1">
+          <div style="font-weight:bolder;color:antiquewhite">
+            {{call.name}}
+          </div>
+          <div>
+            <ion-icon [ngStyle]="{'color':call.status=='success'?'green':'red'}" [name]="call.direction=='receive'?'arrow-up-outline':'arrow-down-outline'"/>{{call.date}}
+          </div>
+        </div>
+        <div style="margin-right:0.8rem;align-self:center" class="present-alert">
+          <ion-button fill="clear">
+            <ion-icon id='phone{{i}}' name="call-outline" style="color:green"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </li>
+    <div>{{getPhonePosition(i)}}</div>
+  </ul>
+</div>

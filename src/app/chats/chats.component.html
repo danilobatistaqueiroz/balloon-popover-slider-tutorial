@@ -1,0 +1,18 @@
+<div id="chat-content">
+  <ul [ngClass]="chat.active?'fades':''" [ngClass]="chat.unread?'unread':''" style="z-index:-1" *ngFor="let chat of chats; let i = index">
+    <li>
+      <img src="assets/avatars/{{chat.img}}" id="chat{{i}}"/><div>{{chat.msg}}</div>
+    </li>
+  </ul>
+</div>
+
+<div class="float-row">
+  <div class="float-flex">
+    <div style="width:auto"></div>
+    <div class="center-block">
+      <ion-img class="button-new-message" src="/assets/icon/message-square.svg">
+      </ion-img>
+    </div>
+    <div style="width:auto"></div>
+  </div>
+</div>
